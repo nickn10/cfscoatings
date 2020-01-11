@@ -65,3 +65,18 @@
     width: 100%;
     text-align: center;
 }
+
+@media screen and (max-width: 980px) {
+    .mid-dot {
+        visibility: hidden;
+    }
+
+    #landing-bg {
+        margin-top: 2rem;
+        height: 600px;
+    }
+
+    #landing-text-list {
+        top: 30%;
+    }
+} 
