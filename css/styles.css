@@ -4,6 +4,11 @@
     font-family: 'Muli', sans-serif;
 }
 
+body {
+    background-image: url(../img/bgi2.jpeg);
+    background-attachment: fixed;
+}
+
 #bgi {
     min-height: 100%;
     max-width: auto;
@@ -26,21 +31,27 @@
 
 #landing {
     position: relative;
-    text-align: center;
+    width: 95%;
+    min-width: 900px;
+    margin: 0 auto;
+    /* text-align: center; */
     color: white;
 }
 
-#landing-bg {
-    width: 95%;
-    max-height: 750px;
-    position: relative;
-    z-index: -1;
+#landing img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 700px;
+    width: 100%;
+    z-index: -10;
+    opacity: 1;
 }
 
 #landing-text-list {
     position: absolute;
-    width: 100%;
-    top: 40%;
+    width: 99%;
+    margin: 25% auto;
 }
 
 .landing-text {
@@ -71,12 +82,13 @@
         visibility: hidden;
     }
 
-    #landing-bg {
+    #landing {
         margin-top: 2rem;
-        height: 600px;
+        height: 500px;
+        min-width: 100vw;
     }
 
-    #landing-text-list {
-        top: 30%;
+    #landing-text-list span{
+        margin-top: 10%;
     }
 } 
