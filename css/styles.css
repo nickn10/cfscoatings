@@ -1,40 +1,81 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Muli', sans-serif;
-}
-
-body {
-    background-image: url(../img/bgi2.jpeg);
-    background-attachment: fixed;
-}
-
-#bgi {
-    min-height: 100%;
-    max-width: auto;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -1;
-}
-
-.bg-white {
-    background-color: white;
+    /* font-family: 'Muli', sans-serif; */
+    font-family: 'Roboto Mono', monospace;
 }
 
 #logo-top {
-    border-radius: .4em;
-    padding: .4em;
-    width: 20em;
-    margin: .5em auto;
+    height: 70%;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 5px;
+    float: left;
+}
+
+#nav-bar {
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    background-color: ivory;
+    width: 100%;
+    height: 80px;
+    color: ivory;
+    font-size: smaller;
+    z-index: 100;
+}
+
+#nav-bar ul {
+    list-style-type: none;
+    margin: 0 10px 0 0;
+    padding: 0;    
+}
+
+#nav-bar li {
+    float: right;
+    margin-top: 20px;
+    margin-right: 5px;
+    font-size: 1.1rem;
+    padding: 8px;
+    color: black;
+    text-align: center;
+}
+
+#nav-bar ul li a {
+    display: block;
+    width: 95px;
+    height: 35px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .3s;
+}
+
+#nav-bar ul li a:hover {
+    border-bottom: 1px solid black;
+}
+
+#email {
+    align-self: left;
+}
+
+#phone {
+    float: right;
+    margin-right: 5px;
+}
+
+.fa {
+    margin: 5px;
 }
 
 #landing {
+    margin-top: 100px;
     position: relative;
-    width: 95%;
+    overflow: hidden;
+    width: 100%;
+    height: 97vh;
+    max-height: 750px;
     min-width: 900px;
     margin: 0 auto;
-    /* text-align: center; */
     color: white;
 }
 
@@ -42,32 +83,41 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 700px;
+    height: 100%;
     width: 100%;
     z-index: -10;
-    opacity: 1;
+    transition: transform .3s linear;
+}
+
+#landing:hover img {
+    transform: scale(1.06);
 }
 
 #landing-text-list {
-    position: absolute;
-    width: 99%;
-    margin: 25% auto;
+    width: 100%;
+    margin: 20% auto;
+    text-align: center;
 }
 
 .landing-text {
-    display: inline-block;
     margin: .1em;
     font-size: 4em;
-    opacity: 0;
-    transition: opacity 1s;
 }
 
-#logo {
-    height: 8em;
+#content-main {
+    min-height: 500px;
+    width: 100%;
 }
 
-.fade-in {
-    opacity: 1;
+#content-main p {
+    margin: 10px;
+}
+
+#content-footer {
+    background-color: #2e3136;
+    /* background-color: black; */
+    color: ivory;
+    height: 200px;
 }
 
 .container {
@@ -77,14 +127,16 @@ body {
     text-align: center;
 }
 
+/* ==================================== BREAK POINTS ========================== */
+
 @media screen and (max-width: 980px) {
     .mid-dot {
         visibility: hidden;
     }
 
     #landing {
-        margin-top: 2rem;
-        height: 500px;
+        /* margin-top: 2rem; */
+        height: 700px;
         min-width: 100vw;
     }
 
@@ -96,6 +148,16 @@ body {
 
 /* ============================ ANIMATION ================================ */
 
+/* NAVBAR */
+#nav-bar {
+    animation-name: dropDown;
+    animation-duration: .7s;
+}
+
+@keyframes dropDown {
+    from {height: 0;}
+    to {height: 80px;}
+}
 /* LANDING PHOTOS */
 #landing img:nth-of-type(1) {
     animation-name: faderOut;
@@ -107,11 +169,18 @@ body {
 #landing img:nth-of-type(2) {
     z-index: -2;
 }
-/* #landing img:nth-of-type(n+3) {
-    display: none;
-} */
 
 @keyframes faderOut {
-    from { opacity: 1;}
-    to   { opacity: 0;}
+    from {opacity: 1;}
+    to   {opacity: 0;}
+}
+
+/* LANDING TEXT */
+.landing-text {
+    animation-name: faderIn;
+    animation-duration: 2.5s;
+}
+@keyframes faderIn {
+    from {opacity: 0;}
+    to   {opacity: 1;}
 }
