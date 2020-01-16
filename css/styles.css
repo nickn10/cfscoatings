@@ -72,11 +72,24 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 97vh;
-    max-height: 750px;
+    height: 95vh;
+    max-height: 780px;
     min-width: 900px;
     margin: 0 auto;
     color: white;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .4;
+    z-index: -5;
 }
 
 #landing img {
@@ -94,14 +107,28 @@
 }
 
 #landing-text-list {
+    position: relative;
     width: 100%;
-    margin: 20% auto;
+    margin-top: 20%;
+    color: ivory;
     text-align: center;
 }
 
-.landing-text {
-    margin: .1em;
-    font-size: 4em;
+#landing-text-list span {
+    display: block;
+    font-weight: bold;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.landing-text-primary {
+    font-size: 2em;
+}
+.landing-text-secondary {
+    margin-top: 20px;
 }
 
 #content-main {
@@ -135,8 +162,8 @@
     }
 
     #landing {
-        /* margin-top: 2rem; */
-        height: 700px;
+        margin-top: 20%;
+        height: 740px;
         min-width: 100vw;
     }
 
@@ -163,11 +190,11 @@
     animation-name: faderOut;
     animation-delay: 4s;
     animation-duration: 1s;
-    z-index: -1;
+    z-index: -10;
 }
 
 #landing img:nth-of-type(2) {
-    z-index: -2;
+    z-index: -20;
 }
 
 @keyframes faderOut {
@@ -176,7 +203,7 @@
 }
 
 /* LANDING TEXT */
-.landing-text {
+#landing h1 {
     animation-name: faderIn;
     animation-duration: 2.5s;
 }
